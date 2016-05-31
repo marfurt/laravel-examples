@@ -15,3 +15,10 @@ Route::get('/publish', function()
 
 	return "Published on test-channel";
 });
+
+Route::get('/cache', function()
+{
+	Cache::put('username', 'john.doe', 1);
+
+	return Cache::get('username');
+});
